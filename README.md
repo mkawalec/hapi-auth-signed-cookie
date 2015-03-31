@@ -1,10 +1,25 @@
-### hapi-auth-cookie
+### hapi-auth-signed-cookie
 
 [**hapi**](https://github.com/hapijs/hapi) Cookie authentication plugin
 
-[![Build Status](https://secure.travis-ci.org/hapijs/hapi-auth-cookie.png)](http://travis-ci.org/hapijs/hapi-auth-cookie)
+Maintainer: [Michal Kawalec](https://github.com/mkawalec)
 
-Lead Maintainer: [James Weston](https://github.com/jaw187)
+Heavily based on [Hapi Auth Cookie](https://github.com/hapijs/hapi-auth-cookie/)
+by [James Weston](https://github.com/jaw187)
+
+
+#### Differences
+
+The difference between this and hapi-auth-cookie is that the cookie is
+accessible on the client side, which enables it to get session data from
+the cookie. You can decode the data in a cookie like:
+
+    const decoded = (new Buffer(session, 'base64')).toString('binary');
+    const data = JSON.parse(decoded);
+
+Where `session` is the value of cookie which holds the session.
+
+#### Docs
 
 Cookie authentication provides a simple cookie-based session management. The user has to be
 authenticated via other means, typically a web form, and upon successful authentication,
@@ -16,7 +31,7 @@ in possession of the cookie content can use it to impersonate its true owner. Th
 takes the following required options:
 
 - `cookie` - the cookie name. Defaults to `'sid'`.
-- `password` - used for Iron cookie encoding.
+- `password` - used for cookie signing
 - `ttl` - sets the cookie expires time in milliseconds. Defaults to single browser session (ends
   when browser closes).
 - `domain` - sets the cookie Domain value. Defaults to none.

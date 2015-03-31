@@ -1,15 +1,16 @@
 {
-  "name": "hapi-auth-cookie",
-  "description": "Cookie authentication plugin",
-  "version": "2.0.0",
-  "repository": "git://github.com/hapijs/hapi-auth-cookie",
+  "name": "hapi-auth-signed-cookie",
+  "description": "Cookie authentication plugin without encryption",
+  "version": "1.0.0",
+  "repository": "git://github.com/mkawalec/hapi-auth-signed-cookie",
   "main": "index",
   "keywords": [
     "hapi",
     "plugin",
     "auth",
     "cookie",
-    "session"
+    "session",
+    "signed"
   ],
   "engines": {
     "node": ">=0.10.32"
@@ -33,7 +34,7 @@
   "licenses": [
     {
       "type": "BSD",
-      "url": "http://github.com/hapijs/hapi-auth-cookie/raw/master/LICENSE"
+      "url": "http://github.com/mkawalec/hapi-auth-signed-cookie/raw/master/LICENSE"
     }
   ]
 }
